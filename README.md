@@ -14,32 +14,24 @@ The allowed client IP address
 This data aids in behavioral analysis and rule-based filtering in WAF systems.
 
 ⚙️ Features:
-Constructor __construct()
-Initializes the object using cookie data:
 
-timezone – The client's timezone ($_COOKIE['timezone']), or 'Unknown' if unavailable.
+$wafAgent = new WafAgent();
 
-usingSelenium – Boolean flag derived from $_COOKIE['usingSelenium'].
-
-clinetip – IP address stored in $_COOKIE['allowed'].
 
 Method getTimezone()
-Returns the stored timezone of the client.
+//Returns the stored timezone of the client.
 
 Method isUsingSelenium()
 Indicates whether the request was likely generated using automation (Selenium).
 
-Method getClinetipIP()
-Returns the allowed client IP (from cookie).
+Method getClientIP()
+//Returns the allowed client IP (from cookie).
 
 Method getInfo()
-Returns a structured array of all available attributes:
+//Returns a structured array of all available attributes:
 
-php
-Copy
-Edit
 [
   'timezone' => 'Africa/Cairo',
   'usingSelenium' => false,
-  'clinetip' => '192.168.1.100'
+  'clientip' => '192.168.1.100'
 ]
